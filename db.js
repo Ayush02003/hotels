@@ -11,7 +11,6 @@ mongoose.connect(mongoURL
 
 // get the default connection
 const db = mongoose.connection;
-
 db.on('connected', () => {
     console.log("Connected Successfully");
 });
