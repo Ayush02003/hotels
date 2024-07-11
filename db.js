@@ -15,6 +15,7 @@ db.on('connected', () => {
     console.log("Connected Successfully");
 });
 
+
 db.on('disconnected', () => {
     console.log("Disconnected from server");
 });
