@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
 
 // connection URL
-const mongoURL = 'mongodb://localhost:27017/hotel';
 
+require('dotenv').config();
+
+// const mongoURL = process.env.db_url_local
+const mongoURL = process.env.db_url;
 // setup mongodb collection
 mongoose.connect(mongoURL
     // useNewUrlParser: true,
@@ -10,9 +13,9 @@ mongoose.connect(mongoURL
 );
 
 // get the default connection
-const db = mongoose.connection;
+const db = mongoose.connection; 
 db.on('connected', () => {
-    console.log("Connected Successfully");
+    console.log("Connected Successfully"); 
 });
 
 db.on('disconnected', () => {
