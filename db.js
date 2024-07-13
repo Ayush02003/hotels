@@ -4,18 +4,18 @@ const mongoose = require("mongoose");
 
 require('dotenv').config();
 
-// const mongoURL = process.env.db_url_local
-const mongoURL = process.env.db_url;
+const mongoURL = process.env.db_url_local
+// const mongoURL = process.env.db_url;
 // setup mongodb collection
 mongoose.connect(mongoURL,{
 //     useNewUrlParser: true,
 //   useUnifiedTopology: true,
-  ssl: true,
-  tlsAllowInvalidCertificates: true
+//   ssl: true, 
+//   tlsAllowInvalidCertificates: true
 });
 
 // get the default connection
-const db = mongoose.connection; 
+const db = mongoose.connection;   
 db.on('connected', () => {
     console.log("Connected Successfully"); 
 });
